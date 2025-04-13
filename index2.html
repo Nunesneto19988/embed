@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>gov.br - Dados Vazados</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f6f6f6;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 24px;
+      max-width: 360px;
+      margin: 0 auto;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .logo img {
+      height: 28px;
+    }
+
+    .divider {
+      height: 3px;
+      background-color: #a6ce39;
+      border-radius: 2px;
+      margin: 8px 0 20px 0;
+    }
+
+    .alert {
+      background-color: #f1f1f1;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 14px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .field {
+      background-color: #f9f9f9;
+      padding: 10px 14px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      border: 1px solid #ddd;
+    }
+
+    .field label {
+      font-size: 12px;
+      color: #555;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .field span {
+      font-weight: bold;
+      font-size: 14px;
+      color: #111;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="https://i.postimg.cc/fLVbPxRF/Gov-br-logo-svg.png" alt="gov.br logo">
+    </div>
+    <div class="divider"></div>
+
+    <div class="alert">
+      Identificamos que seus dados foram vazados. <br>
+      Confira abaixo as informações comprometidas.
+    </div>
+
+    <div class="field">
+      <label>Nome Completo:</label>
+      <span id="nome"></span>
+    </div>
+
+    <div class="field">
+      <label>CPF:</label>
+      <span id="cpf"></span>
+    </div>
+
+    <div class="field">
+      <label>Data de Nascimento:</label>
+      <span id="nascimento"></span>
+    </div>
+
+    <div class="field">
+      <label>Nome da Mãe:</label>
+      <span id="mae"></span>
+    </div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById('nome').textContent = params.get('nome');
+    document.getElementById('cpf').textContent = params.get('cpf');
+    document.getElementById('nascimento').textContent = params.get('nascimento');
+    document.getElementById('mae').textContent = params.get('mae');
+  </script>
+</body>
+</html>
